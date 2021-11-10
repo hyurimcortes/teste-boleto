@@ -6,7 +6,7 @@
  */
 
 import { AppErrors } from "../../../../config/errors/AppErrors";
-import { IBoletoRepositoy } from "../../../repositories/usuarios/IBoletoRepository";
+import { IBoletoRepositoy } from "../../../repositories/boletos/IBoletoRepository";
 
 interface IRequest {
     login:string;

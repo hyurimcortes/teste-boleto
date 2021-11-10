@@ -5,8 +5,8 @@
  * Onde Repositorio->UseCase->Controller
  */
 
-import { BoletoRepository } from "../../../repositories/usuarios/implements/BoletoRepository";
-import { ConsultaBoletoConstoller } from "./consultaBoletoController";
+import { BoletoRepository } from "../../../repositories/boletos/implements/BoletoRepository";
+import { ConsultaBoletoConstoller } from "./ConsultaBoletoController";
 import { ConsultaBoletoUseCase } from "./consultaBoletoUseCase";
 
 export default ():ConsultaBoletoConstoller => {
