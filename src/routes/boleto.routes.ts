@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import  consultarBoletoController  from '../app/useCases/usuarios/listUsuario';
+import  consultarBoletoController  from '../app/useCases/boleto/consultaBoleto';
 
 
 const boletoRoutes = Router();
