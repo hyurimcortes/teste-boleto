@@ -8,15 +8,11 @@
 import { AppErrors } from "../../../../config/errors/AppErrors";
 import { IBoletoRepositoy } from "../../../repositories/boletos/IBoletoRepository";
 
-interface IRequest {
-    login:string;
-    password:string;
-}
 
-interface IResponse {
-    id:number;
-    login:string;
-    token:string;
+interface IRequest {
+    barCode:number;
+    amount:string;
+    expirationDate:string;
 }
 
 class ConsultaBoletoUseCase {
@@ -25,7 +21,7 @@ class ConsultaBoletoUseCase {
 
     }
 
-     async execute({login,password}:IRequest): Promise<any>{
+     async execute({ barCode, amount, expirationDate }:IRequest): Promise<any>{
          // Usuario existe
 
         
@@ -41,7 +37,9 @@ class ConsultaBoletoUseCase {
 
       
         return {
-            '1':'1'
+            barCode:21313,
+            amount:'string',
+            expirationDate:'string'
         }
 
        

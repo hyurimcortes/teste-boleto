@@ -12,9 +12,9 @@ class ConsultaBoletoConstoller {
     }
 
     async handle(request:Request, response:Response): Promise<Response>{
-     const { login, password } = request.body;
+     const { barCode, amount, expirationDate } = request.body;
 
-     const dadosAuth =   await  this.consultaBoletoUseCase.execute({login, password});
+     const dadosAuth =   await  this.consultaBoletoUseCase.execute({ barCode, amount, expirationDate});
    
      return response.status(201).json(dadosAuth);
    
