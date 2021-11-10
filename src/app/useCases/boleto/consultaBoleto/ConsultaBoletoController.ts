@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ConsultaBoletoUseCase } from './consultaBoletoUseCase';
+import { ConsultaBoletoUseCase } from './ConsultaBoletoUseCase';
 
 /**
  * Controller responsavel apenas para receber requisicao e da resposta
