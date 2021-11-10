@@ -10,7 +10,7 @@ import { IBoletoRepositoy } from "../../../repositories/boletos/IBoletoRepositor
 
 
 interface IRequest {
-    barCode:number;
+    barCode:string;
     amount:string;
     expirationDate:string;
 }
@@ -24,26 +24,34 @@ class ConsultaBoletoUseCase {
      async execute({ barCode, amount, expirationDate }:IRequest): Promise<any>{
          // Usuario existe
 
-        
-
-         const boleto = await this.boletoRepository.findByBoleto('1');
-
-       
-         if(!boleto){
-            const status = { "error":"Boleto não existe" }
-             return  status;
-           //  throw new AppErrors("Usuario Ou Senha não existe");
+         if(!barCode){
+            return AppErrors('Codigo de barra obrigatorio')
          }
 
-      
+         if(barCode.length != 44){
+            return AppErrors('Codigo de barras invalido')
+         }
+
+         if(!amount){
+            return AppErrors('Valor do boleto obrigatorio')
+         }
+
+         if(Number(amount) !== 0 && Number(amount) < 0){
+            return AppErrors('Valor do boleto não pode ser zero ou menor que 0')
+         }
+
+         if(!expirationDate){
+            return AppErrors('Boleto deve ter data de expiração')
+         }
+        
+
         return {
-            barCode:21313,
-            amount:'string',
-            expirationDate:'string'
+            barCode:21299758700000020000001121100012100447561740,
+            amount:'20.00',
+            expirationDate:'2018-07-16'
         }
 
-       
-
+    
     }
 
 }
